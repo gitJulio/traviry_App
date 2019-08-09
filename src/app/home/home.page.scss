@@ -4,12 +4,49 @@ ion-slide {
     flex-direction: column;
 }
 
-ion-img {
-    max-width: 50vw;
-    max-height: 50vh;
-    overflow: hidden;
+// ion-img {
+//     max-width: 50vw;
+//     max-height: 50vh;
+//     overflow: hidden;
+// }
+
+.img-only{
+  width: 50%;
+  height: 50%;
+  margin-top: -20px;
 }
 
+.img-full{
+
+  width: 100%;
+  height: 50%;
+}
+
+.borde{
+  border:1px solid #000000;
+}
+.margenes{
+  margin-left: 50px;
+  margin-right:50px;
+}
+
+.margenes-3{
+  margin-left: 50px;
+  margin-right:50px;
+  margin-top: -20px;
+}
+
+p{
+  font-size: 0.8rem;
+}
+
+h3{
+  color:black;
+}
+
+p{
+  color:#686868;
+}
 
 .step-one {
     background: #ffe5da;
