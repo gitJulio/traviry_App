@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private ruta:Router) {}
 
+
+  async ir_login(){
+    await this.ruta.navigate(['/login'])
+  }
+
+  async ir_registro(){
+    await this.ruta.navigate(['/registro'])
+  }
 }
