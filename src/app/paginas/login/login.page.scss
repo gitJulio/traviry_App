@@ -1,0 +1,36 @@
+:host {
+    ion-content {
+      --background: linear-gradient(135deg, #ffe4d9, #ffefe7);
+
+            // --background: linear-gradient(135deg, #fffaf8, #f1d6ca);var(--ion-color-primary));
+    }
+}
+
+.paz {
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+  margin-top:50px !important;
+    width: 150px;
+    height: 100px;
+    margin: 20px auto 8px;
+    border-radius: 10%;
+    background: url("../../../assets/fondos/1.jpg") no-repeat;
+    background-size: 100%;
+  }
+
+  .ion-color-light {
+    --ion-color-base: #000000 !important;
+    --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248) !important;
+    --ion-color-contrast: var(--ion-color-light-contrast, #000) !important;
+    --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 0, 0, 0) !important;
+    --ion-color-shade: var(--ion-color-light-shade, #d7d8da) !important;
+    --ion-color-tint: var(--ion-color-light-tint, #f5f6f9) !important;
+    font-size: 2rem;
+}
+
+.titulo{
+  font-size: 2rem;
+}
