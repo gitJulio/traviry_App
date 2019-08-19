@@ -1,0 +1,95 @@
+// .cont {
+//     position: relative;
+//     height: 100%;
+//     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+//     background-size: cover;
+//     overflow: auto;
+//     font-family: $openSans;
+// }
+.header-margen {
+    margin-top: 10px;
+}
+
+.borde {
+    border: 1px solid #000000;
+}
+
+// ion-content {
+//     --background: url('/assets/2.jpg') no-repeat 100% 100%;
+// }
+.img_fondo {
+    width: 100%;
+    /* en porcentaje (el highlight del foro lo trasforma) */
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    background-size: cover;
+}
+
+ion-content {
+    --offset-top: 0px;
+    --offset-bottom: 0px;
+    // --background: #ffe5da;
+    // --background: #000000;
+    // --background: url('/assets/fondos/login.png') no-repeat center center fixed;
+    // --background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg') no-repeat center center fixed;
+    --background: url('/assets/fondos/nube2.png') no-repeat 100% 100%;
+    --background-size: cover;
+    --color: #FFF;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 90px 0;
+        .header {
+            flex: 1;
+            margin-top: 10px;
+            justify-content: center;
+            text-align: center;
+            padding-top: 20px;
+            .title {
+                img {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+            h3 {
+                color: #06bebd;
+            }
+        }
+        .body {
+            flex: 1.5;
+            ion-list {
+                --background: none;
+                background: none;
+                margin-bottom: 0!important;
+                ion-item {
+                    --border-color: transparent!important;
+                    --highlight-height: 0;
+                    --background: none;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 4px;
+                    margin-bottom: 10px;
+                    ion-icon {
+                        color: #fff;
+                    }
+                    ion-input {
+                        --color: #fff;
+                    }
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            a {
+                color: #06bebd;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
+}

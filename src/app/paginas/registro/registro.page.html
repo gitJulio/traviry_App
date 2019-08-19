@@ -1,9 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+    <div class="container">
+        <div class="header ">
+            <div class="title">
+                <img src="assets/fondos/2.jpg">
+            </div>
+            <h3>Traviry</h3>
+            <p>Registraté aquí</p>
+        </div>
+        <div class="body">
+            <ion-list>
+                <ion-item>
+                    <ion-icon slot="start" name="person"></ion-icon>
+                    <ion-input placeholder="Nombre"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon slot="start" name="at"></ion-icon>
+                    <ion-input placeholder="Correo"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon slot="start" name="lock"></ion-icon>
+                    <ion-input placeholder="Contraseña"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon slot="start" name="lock"></ion-icon>
+                    <ion-input placeholder="Repita Contraseña"></ion-input>
+                </ion-item>
+            </ion-list>
 
+        </div>
+        <div class="footer">
+            ¿ya tiene cuenta? <a routerLink="/login">Ingresa aquí</a>
+        </div>
+    </div>
 </ion-content>

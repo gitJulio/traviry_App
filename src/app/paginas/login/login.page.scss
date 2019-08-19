@@ -1,36 +1,98 @@
-:host {
-    ion-content {
-      --background: linear-gradient(135deg, #ffe4d9, #ffefe7);
+// .cont {
+//     position: relative;
+//     height: 100%;
+//     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+//     background-size: cover;
+//     overflow: auto;
+//     font-family: $openSans;
+// }
+// .header-margen {
+//     margin-top: 10px;
+// }
+.borde {
+    border: 1px solid #000000;
+}
 
-            // --background: linear-gradient(135deg, #fffaf8, #f1d6ca);var(--ion-color-primary));
+// ion-content {
+//     --background: url('/assets/2.jpg') no-repeat 100% 100%;
+// }
+.img_fondo {
+    width: 100%;
+    /* en porcentaje (el highlight del foro lo trasforma) */
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    background-size: cover;
+}
+
+.footer {
+    margin-top: 10px;
+}
+
+ion-content {
+    --offset-top: 0px;
+    --offset-bottom: 0px;
+    // --background: #ffe5da;
+    // --background: #000000;
+    // --background: url('/assets/fondos/login.png') no-repeat center center fixed;
+    // --background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg') no-repeat center center fixed;
+    --background: url('/assets/fondos/nube2.png') no-repeat 100% 100%;
+    --background-size: cover;
+    --color: #FFF;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 30px 0;
+        .header {
+            flex: 1;
+            margin-top: 10px;
+            justify-content: center;
+            text-align: center;
+            padding-top: 20px;
+            .title {
+                img {
+                    width: 220px;
+                    height: 200px;
+                }
+            }
+            h3 {
+                color: #06bebd;
+            }
+        }
+        .body {
+            flex: 1.5;
+            ion-list {
+                --background: none;
+                background: none;
+                margin-bottom: 0!important;
+                ion-item {
+                    --border-color: transparent!important;
+                    --highlight-height: 0;
+                    --background: none;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 4px;
+                    margin-bottom: 10px;
+                    ion-icon {
+                        color: #fff;
+                    }
+                    ion-input {
+                        --color: #fff;
+                    }
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            a {
+                color: #06bebd;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
     }
-}
-
-.paz {
-    position: relative;
-    z-index: 10;
-}
-
-.logo {
-  margin-top:50px !important;
-    width: 150px;
-    height: 100px;
-    margin: 20px auto 8px;
-    border-radius: 10%;
-    background: url("../../../assets/fondos/1.jpg") no-repeat;
-    background-size: 100%;
-  }
-
-  .ion-color-light {
-    --ion-color-base: #000000 !important;
-    --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248) !important;
-    --ion-color-contrast: var(--ion-color-light-contrast, #000) !important;
-    --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 0, 0, 0) !important;
-    --ion-color-shade: var(--ion-color-light-shade, #d7d8da) !important;
-    --ion-color-tint: var(--ion-color-light-tint, #f5f6f9) !important;
-    font-size: 2rem;
-}
-
-.titulo{
-  font-size: 2rem;
 }
