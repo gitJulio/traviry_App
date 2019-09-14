@@ -1,4 +1,5 @@
 // page-home {
+
   $grid-padding-width: 1px !default;
   ion-title {
     position: absolute;
@@ -10,6 +11,36 @@
     text-align: center;
   }
 
+  .ago{
+    font-weight: bold;
+  }
+  .inactive {
+    color: #cccccc;
+  }
+  
+  .active {
+    color: #0d0d0d;
+    border-bottom: 2px solid #5fbae9;
+    color:#56baed;
+  }
+  
+  .head {
+    height: 100%;
+    padding: 5px;
+}
+
+
+  .tamanio-icon {
+    font-size: 30px; //Preferred size here
+    font-weight: bolder;
+  }
+
+  .ion-likes{
+    font-size:15px;
+  }
+  .borde{
+    border:1px solid #000000;
+  }
   /* Stories */
   .story {
     white-space: nowrap;
@@ -306,7 +337,8 @@ Main components
     top: 0;
     bottom: 0;
     width: 5px;
-    background: #afdcf8;
+    // background: #afdcf8;
+    background: #ffe5da;
     left: 44px;
     margin-left: -10px;
     z-index: 1;
@@ -321,7 +353,7 @@ Main components
 }
 
 .timeline .timeline-thumb.timeline-icon {
-    height: 50px;
+    height: 30px;
     text-align: center;
     color: white;
     border: 5px solid #CBD0D3;
@@ -333,8 +365,27 @@ Main components
     display: block;
 }
 
+.top{
+  margin-top: 15px;
+}
+
+ion-item{
+  margin-left: -10px;
+}
+
+.border-botom{
+  border-bottom: 0.5px solid #000000;
+}
+img{
+  border-radius: 10px;
+}
+
+.nombre{
+    color: black;
+}
+
 .timeline .timeline-item {
-    margin-left: 72px;
+    margin-left: 25px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 8px;
 }
@@ -347,7 +398,7 @@ Main components
 
 
 .divider-title {
-    background: #e4e4e4;
+    background: #fff1eb;
     padding: 5px 15px;
 }
 

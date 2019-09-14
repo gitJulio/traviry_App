@@ -1,6 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>muro</ion-title>
+    <!-- <ion-row class="head borde">
+        <ion-col size="12"  >
+            <ion-col size="6" >
+              <ion-icon ios="ios-planet" md="md-planet" class="active"></ion-icon>
+            </ion-col>
+          </ion-row>
+    </ion-row> -->
+    <ion-row class="ion-text-center">
+        <ion-col size="2" size-lg >
+            <ion-icon ios="ios-planet" md="md-planet" class="active tamanio-icon"></ion-icon>
+        </ion-col>
+        <ion-col size="2" size-lg>
+            <ion-icon ios="ios-add-circle" md="md-add-circle" class="inactive tamanio-icon"></ion-icon>
+        </ion-col>
+        <ion-col size="2" size-lg >
+            <ion-icon name="contact" class="inactive tamanio-icon"></ion-icon>
+          </ion-col>
+        <ion-col size="2" size-lg>
+            <ion-icon ios="ios-contacts" md="md-contacts" class="inactive tamanio-icon"></ion-icon>
+        </ion-col>
+        <ion-col size="2" size-lg>
+            <ion-icon ios="ios-search" md="md-search" class="inactive tamanio-icon"></ion-icon>
+        </ion-col>
+        <ion-col size="2" size-lg>
+            <ion-icon ios="ios-notifications" md="md-notifications" class="inactive tamanio-icon"></ion-icon>
+        </ion-col>
+      </ion-row>
   </ion-toolbar>
 </ion-header>
 
@@ -16,25 +42,55 @@
   <!-- Story line -->
   <ion-content>
 
-     <div class="divider-title">Recent</div>
+     <div class="divider-title"><b>TimeLine</b> </div>
      <ul class="timeline">
-       <li>
 
-         <div class="timeline-thumb bg-color-red timeline-icon">
-           <i class="ion-heart"></i>
-         </div>
+       <li>
+         <!-- <div class="timeline-thumb bg-color-red timeline-icon"> -->
+            <img src="assets/img/julio.jpg" alt="" class="timeline-thumb">
+         <!-- </div> -->
         <ion-card>
          <div class="timeline-item">
-           <h4>Like Title</h4>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+          
+            <ion-row class="nombre">
+
+                <ion-col size="10">
+                    <h2 style="font-weight: bold" >Julio Ezequiel</h2>
+                  </ion-col >
+                  <ion-col size="2">
+                      <span no-margin no-padding clear color="black" ion-button icon-only style="float: right; top: 105px" class="top">
+                        <ion-icon name="md-more"></ion-icon>
+                      </span>
+                    </ion-col>
+
+              <ion-col size="12">
+                  <img src="https://www.expoknews.com/wp-content/uploads/2019/03/Machu-Pichu-1024x500.jpg">
+              </ion-col>
+            </ion-row>
+           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p> -->
            <div class="timeline-stats">
-             <i class="ion-heart"></i> 2,450
-             <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2 mins ago</span>
+              <p class="like-content">
+                <ion-icon name="heart"></ion-icon> 250 likes 
+                &nbsp;
+                <ion-icon name="md-chatboxes" class="ago"></ion-icon> 5 comentarios
+              </p>
+              <p>
+                <b>techcrunch</b> 
+                Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.
+                <br>
+                <span class="pos-absolute-right ago"><i class="ion-ios-clock"></i> 2 mins ago</span>
+              </p>
+             
+
+             <!-- <span clear ion-button icon-only> -->
+                <!-- <ion-icon no-padding  color="black" name="md-heart" class="icon-space" ></ion-icon>  -->
+             <!-- </span> -->
+               
            </div>
          </div>
        </ion-card>
        </li>
-       <li>
+       <!-- <li>
          <img src="assets/img/julio.jpg" alt="" class="timeline-thumb">
          <ion-card>
          <div class="timeline-item">
@@ -47,6 +103,7 @@
          </div>
          </ion-card>
        </li>
+       
        <li>
          <div class="timeline-thumb bg-color-lightblue timeline-icon">
            <i class="ion-wineglass"></i>
@@ -61,7 +118,7 @@
            </div>
          </div>
          </ion-card>
-       </li>
+       </li> -->
      </ul>
 
 
