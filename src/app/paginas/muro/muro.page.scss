@@ -353,15 +353,22 @@ Main components
 }
 
 .timeline .timeline-thumb.timeline-icon {
-    height: 30px;
+    height: 50px;
     text-align: center;
     color: white;
     border: 5px solid #CBD0D3;
 }
 
-.timeline .timeline-thumb.timeline-icon i {
-    font-size: 28px;
-    margin: 6px 0;
+
+// .timeline .timeline-thumb.timeline-icon i {
+//     font-size: 28px;
+//     margin: 6px 0;
+//     display: block;
+// }
+.timeline-icon{
+    font-size: 40px;
+    // margin: 5px 0px 15px 0;
+    padding: 0px 0px 0px 0;
     display: block;
 }
 
@@ -456,7 +463,8 @@ img{
 }
 
 .bg-color-lightblue {
-    background-color: #5ac8fa !important;
+    // background-color: #5ac8fa !important;
+    background-color: #ffe5da !important;
 }
 
 .color-bluegray {
