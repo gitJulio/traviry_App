@@ -1,4 +1,4 @@
 <ion-app>
-    <app-header></app-header>
-    <ion-router-outlet class="margen-top "></ion-router-outlet>
+    <app-header *ngIf="!es_login"></app-header>
+    <ion-router-outlet  [ngClass]="{'margen-top' : !es_login}"></ion-router-outlet>
 </ion-app>
