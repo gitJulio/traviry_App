@@ -379,9 +379,11 @@ Main components
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 5px;
-    // background: #afdcf8;
-    background: #ffe5da;
+    width: 3px;
+    // background:  linear-gradient(to left, #2D77C1, #68FAC2) !important;
+    // background: #ffe5da;
+    background: #56baed99;
+
     left: 44px;
     margin-left: -10px;
     z-index: 1;
@@ -440,6 +442,8 @@ img {
     padding-bottom: 8px;
 }
 
+li {list-style:none; font-size:50px;}
+
 .timeline .timeline-stats {
     position: relative;
     font-size: 12px;
@@ -447,7 +451,8 @@ img {
 }
 
 .divider-title {
-    background: #fff1eb;
+    // background: #fff1eb;
+    background:linear-gradient(to left, #ffffff, #eef9ff);
     padding: 5px 15px;
 }
 
@@ -507,7 +512,7 @@ img {
 }
 
 .bg-color-lightblue {
-    // background-color: #5ac8fa !important;
+
     background-color: #ffe5da !important;
 }
 
