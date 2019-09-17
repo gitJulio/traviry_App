@@ -24,12 +24,28 @@ export class HeaderComponent implements OnInit {
     async (event: any) => {
       if (event instanceof NavigationEnd) {
                 if (this.ruta.url == '/perfil') {
-                  this.perfil=true;
                   this.muro=false;
+                  this.add=false;
+                  this.perfil=true;
+                  this.chat=false;
+                  this.buscar=false;
+                  this.notificaciones=false;
+                } 
+                if (this.ruta.url == '/crear-itinerario') {
+                  this.muro=false;
+                  this.add=true;
+                  this.perfil=false;
+                  this.chat=false;
+                  this.buscar=false;
+                  this.notificaciones=false;
                 } 
                 if (this.ruta.url == '/muro') {
                   this.muro=true;
+                  this.add=false;
                   this.perfil=false;
+                  this.chat=false;
+                  this.buscar=false;
+                  this.notificaciones=false;
                 } 
               }
           }
@@ -39,6 +55,9 @@ export class HeaderComponent implements OnInit {
   async navegar(ruta){
     if(ruta==1){
       this.ruta.navigateByUrl('/muro')
+    }
+    if(ruta==2){
+      this.ruta.navigateByUrl('/crear-itinerario')
     }
     if(ruta==3){
       this.ruta.navigateByUrl('/perfil')

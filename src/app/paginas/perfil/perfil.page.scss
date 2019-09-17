@@ -54,14 +54,30 @@ body {
     overflow: hidden;
 }
 
+.btn-cam-perfil {
+    display: inline-block;
+    // background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
+    width: 19.37px;
+    height: 16.99px;
+    margin-right: 10px;
+    margin-top: -35px;
+    float: right;
+}
+
 .btn-message {
     display: inline-block;
-    background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
+    // background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077483/profile-card/images/message.svg) no-repeat;
     width: 19.37px;
     height: 16.99px;
     margin-right: 10px;
     margin-top: 10px;
     float: right;
+}
+
+.iconos-config{
+    width: 30px;
+    height: 30px;
+    color:#fff;
 }
 
 .btn-menu {
