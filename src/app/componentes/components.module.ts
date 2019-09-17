@@ -5,12 +5,14 @@ import { IonicModule } from "@ionic/angular";
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TimelineItinerarioComponent } from './timeline-itinerario/timeline-itinerario.component';
 // 
 // import { NoimgPipe } from '../Pipes/noimg.pipe';
 @NgModule({
   declarations: [
     // SideMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    TimelineItinerarioComponent
     // NoimgPipe,
     // MenuCarruselComponent
   ],
@@ -22,7 +24,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     HeaderComponent,
-    FormsModule
+    FormsModule,
+    TimelineItinerarioComponent
   ]
 })
 export class ComponentsModule { }
