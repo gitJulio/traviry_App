@@ -539,3 +539,12 @@ li {list-style:none; font-size:50px;}
 .bg-color-green {
     background-color: #4cd964 !important;
 }
+
+.ion-color-primary {
+    --ion-color-base: var(--ion-color-primary, #3880ff) !important;
+    --ion-color-base-rgb: var(--ion-color-primary-rgb, 56, 128, 255) !important;
+    --ion-color-contrast: var(--ion-color-primary-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #56baed !important;
+    --ion-color-tint: #56baed !important;
+}
