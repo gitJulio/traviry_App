@@ -21,3 +21,27 @@
     font-size: 30px; //Preferred size here
     font-weight: bolder;
 }
+
+
+//************Notificaciones****************//
+.nav__notification__num {
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    font-size: 0.6rem;
+    background: #fd4835;
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #ecf0f1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    // top: -0.4rem;
+    // right: -0.4rem;
+    box-sizing: border-box;
+    margin-left: -15px;
+}
