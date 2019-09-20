@@ -20,9 +20,8 @@ export class ModalItinerarioPage implements OnInit {
   contadorTipo:any=0;
   puntos:[]=[
     {
-      descripcion:this.contadorDescripcion,
-      gasto:this.contadorGasto,
-      gasto:this.contadorTipo,
+      descripcion:'',
+      gasto:'',
       tipo:''
     }
   ]
@@ -35,14 +34,11 @@ export class ModalItinerarioPage implements OnInit {
   }
 
   agregarPunto(){
-    this.contadorDescripcion=this.contadorDescripcion+1;
-    this.contadorGasto=this.contadorGasto+1;
-    this.contadorTipo=this.contadorTipo+1;
+
     this.puntos.push({
-      descripcion:this.contadorDescripcion,
-      gasto:this.contadorGasto,
-      tipo:this.contadorTipo,
-      gasto:'a'
+      descripcion: '',
+      gasto:'',
+      tipo:''
     })
     
     console.log(this.puntos);
