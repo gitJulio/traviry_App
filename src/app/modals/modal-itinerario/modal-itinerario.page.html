@@ -34,21 +34,21 @@
             <ion-col size="12">
                 <ion-item>
                     <ion-label>Descripción:&nbsp;</ion-label>
-                    <ion-input [(ngModel)]="puntos[i].variable" ></ion-input>
+                    <ion-input [(ngModel)]="puntos[i].descripcion" ></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="12">
                 <ion-item>
                     <ion-label>$:&nbsp;</ion-label>
-                    <ion-input type="number" #gasto ></ion-input>
+                    <ion-input type="number" [(ngModel)]="puntos[i].gasto" ></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="12">
-                <ion-select #selectTipo  >
-                    <ion-select-option value="1" selected >Boleto aereo</ion-select-option>
-                    <ion-select-option value="2" >Boleto Bus</ion-select-option>
-                    <ion-select-option value="3" >Boleto tren</ion-select-option>
-                    <ion-select-option value="4" >Hospedaje</ion-select-option>
+                <ion-select #selectTipo [(ngModel)]="puntos[i].tipo"  >
+                    <ion-select-option value="0" selected >Boleto aereo</ion-select-option>
+                    <ion-select-option value="1" >Boleto Bus</ion-select-option>
+                    <ion-select-option value="2" >Boleto tren</ion-select-option>
+                    <ion-select-option value="3" >Hospedaje</ion-select-option>
                     <ion-select-option value="4" >Gastos Varios</ion-select-option>
                   </ion-select> 
             </ion-col>

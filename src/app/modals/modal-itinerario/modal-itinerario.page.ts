@@ -13,15 +13,17 @@ export class ModalItinerarioPage implements OnInit {
    a:any='';
 
   public anArray:any=[];
-  a:[] = [{"nombre":"1"}]
+
 
   contadorDescripcion:any=0;
+  contadorGasto:any=0;
+  contadorTipo:any=0;
   puntos:[]=[
     {
-      variable:this.contadorDescripcion,
-      nombre:'',
-      tipo:'',
-      gasto:''
+      descripcion:this.contadorDescripcion,
+      gasto:this.contadorGasto,
+      gasto:this.contadorTipo,
+      tipo:''
     }
   ]
   ngOnInit() {
@@ -34,10 +36,12 @@ export class ModalItinerarioPage implements OnInit {
 
   agregarPunto(){
     this.contadorDescripcion=this.contadorDescripcion+1;
+    this.contadorGasto=this.contadorGasto+1;
+    this.contadorTipo=this.contadorTipo+1;
     this.puntos.push({
       descripcion:this.contadorDescripcion,
-      nombre:'a',
-      tipo:'a',
+      gasto:this.contadorGasto,
+      tipo:this.contadorTipo,
       gasto:'a'
     })
     
