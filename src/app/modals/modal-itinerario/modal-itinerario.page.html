@@ -7,6 +7,70 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-text-center">
+  <br>
+    <ion-icon name="add-circle" (click)="agregarPunto()"></ion-icon>
+  <!-- <ion-list>
+    <ion-item *ngFor="let punto of puntos">
+        <ion-item>
+            <ion-label>Punto:</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="brown">Boleto aereo</ion-select-option>
+        <ion-select-option value="brown">Terrestre</ion-select-option>
+      </ion-select>
+      <ion-item>
+          <ion-label>$:</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+    </ion-item>
+  
+  </ion-list> -->
+<ion-list>
+        <ion-item *ngFor="let punto of puntos; let i=index;"  >
+          <ion-card>
+          <ion-row>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label>Descripción:&nbsp;</ion-label>
+                    <ion-input [(ngModel)]="puntos[i].variable" ></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label>$:&nbsp;</ion-label>
+                    <ion-input type="number" #gasto ></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-select #selectTipo  >
+                    <ion-select-option value="1" selected >Boleto aereo</ion-select-option>
+                    <ion-select-option value="2" >Boleto Bus</ion-select-option>
+                    <ion-select-option value="3" >Boleto tren</ion-select-option>
+                    <ion-select-option value="4" >Hospedaje</ion-select-option>
+                    <ion-select-option value="4" >Gastos Varios</ion-select-option>
+                  </ion-select> 
+            </ion-col>
+          </ion-row>
+        </ion-card>
 
+            <!-- <ion-item>
+                <ion-label>$:&nbsp;</ion-label>
+                <ion-input type="number" #gasto ></ion-input>
+            </ion-item>
+
+          <ion-select #selectTipo  >
+            <ion-select-option value="1" selected >Boleto aereo</ion-select-option>
+            <ion-select-option value="2" >Boleto Bus</ion-select-option>
+            <ion-select-option value="3" >Boleto tren</ion-select-option>
+            <ion-select-option value="4" >Hospedaje</ion-select-option>
+            <ion-select-option value="4" >Gastos Varios</ion-select-option>
+          </ion-select> -->
+        </ion-item>
+  </ion-list>
+
+  <ion-button (click)="saluda()" > 
+      Guardar
+  </ion-button>
 </ion-content>
