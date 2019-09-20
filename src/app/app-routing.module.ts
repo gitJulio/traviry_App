@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './paginas/usuario-login/usuario-login.module#UsuarioLoginPageModule' },
   { path: 'perfil', loadChildren: './paginas/perfil/perfil.module#PerfilPageModule' },  { path: 'crear-itinerario', loadChildren: './paginas/crear-itinerario/crear-itinerario.module#CrearItinerarioPageModule' },
   { path: 'chat', loadChildren: './paginas/chat/chat.module#ChatPageModule' },
+  { path: 'modal-itinerario', loadChildren: './modals/modal-itinerario/modal-itinerario.module#ModalItinerarioPageModule' },
 
 
 ];
