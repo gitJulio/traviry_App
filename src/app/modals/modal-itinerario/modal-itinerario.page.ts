@@ -18,7 +18,7 @@ export class ModalItinerarioPage implements OnInit {
   contadorDescripcion:any=0;
   contadorGasto:any=0;
   contadorTipo:any=0;
-  puntos:[]=[
+  puntos: any =[
     {
       descripcion:'',
       gasto:'',
