@@ -10,9 +10,10 @@ const routes: Routes = [
   { path: 'registro', loadChildren: './paginas/registro/registro.module#RegistroPageModule' },
   { path: 'muro', loadChildren: './paginas/muro/muro.module#MuroPageModule' },
   { path: 'login', loadChildren: './paginas/usuario-login/usuario-login.module#UsuarioLoginPageModule' },
-  { path: 'perfil', loadChildren: './paginas/perfil/perfil.module#PerfilPageModule' },  { path: 'crear-itinerario', loadChildren: './paginas/crear-itinerario/crear-itinerario.module#CrearItinerarioPageModule' },
+  { path: 'perfil', loadChildren: './paginas/perfil/perfil.module#PerfilPageModule' },
+  { path: 'crear-itinerario', loadChildren: './paginas/crear-itinerario/crear-itinerario.module#CrearItinerarioPageModule' },
   { path: 'chat', loadChildren: './paginas/chat/chat.module#ChatPageModule' },
-  { path: 'modal-itinerario', loadChildren: './modals/modal-itinerario/modal-itinerario.module#ModalItinerarioPageModule' },
+  // { path: 'modal-itinerario', loadChildren: './modals/modal-itinerario/modal-itinerario.module#ModalItinerarioPageModule' },
 
 
 ];

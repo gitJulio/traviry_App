@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalItinerarioPage } from '../../modals/modal-itinerario/modal-itinerario.page';
 
 @Component({
   selector: 'app-crear-itinerario',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearItinerarioPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
+  }
+
+  async presentModal() {
+    // await modal = await this.modalController.create({
+    //   component: ModalItinerarioPage
+    // });
+    // return await modal.present();
+    const modal = await this.modalController.create({
+      component: ModalItinerarioPage,
+      componentProps: {}
+    });
+    await modal.present();
   }
 
 }

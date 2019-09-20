@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { NavParams, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-itinerario',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalItinerarioPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController:ModalController) { }
 
   ngOnInit() {
+  }
+
+  cerrar() {
+    this.modalController.dismiss();
   }
 
 }
