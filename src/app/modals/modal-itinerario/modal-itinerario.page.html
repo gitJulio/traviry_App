@@ -10,10 +10,23 @@
 <ion-content class="ion-text-center">
   <br>
   <ion-item>
-      <ion-label position="floating">Nombre :</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-icon name="add-circle" (click)="agregarPunto()"></ion-icon>
+      <ion-label position="floating" class="">Nombre Itinerario:</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+   
+  
+     <!-- <ion-col size="12" class=""> -->
+        <ion-row>
+        <ion-col size="7" class=" ion-text-end top">
+            <span>Agregar Puntos </span>
+        </ion-col>
+        <ion-col size="5" class=" ion-text-start">
+            <ion-icon name="add-circle" (click)="agregarPunto()"></ion-icon>
+        </ion-col>
+      </ion-row>
+     <!-- </ion-col> -->
+
+    
   <!-- <ion-list>
     <ion-item *ngFor="let punto of puntos">
         <ion-item>
@@ -32,29 +45,33 @@
   
   </ion-list> -->
 <ion-list>
-        <ion-item *ngFor="let punto of puntos; let i=index;"  >
+        <ion-item *ngFor="let punto of itinerario.puntos; let i=index;"  >
           <ion-card>
+
           <ion-row>
             <ion-col size="12">
                 <ion-item>
-                    <ion-label>Descripción:&nbsp;</ion-label>
-                    <ion-input [(ngModel)]="puntos[i].descripcion" ></ion-input>
+                    <ion-label position="floating" >Descripción:&nbsp;</ion-label>
+                    <ion-input [(ngModel)]="punto.descripcion" ></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="12">
                 <ion-item>
-                    <ion-label>$:&nbsp;</ion-label>
-                    <ion-input type="number" [(ngModel)]="puntos[i].gasto" ></ion-input>
+                    <ion-label position="floating" >$:&nbsp;</ion-label>
+                    <ion-input type="number" [(ngModel)]="punto.gasto" ></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="12">
-                <ion-select #selectTipo [(ngModel)]="puntos[i].tipo"  >
-                    <ion-select-option value="0" selected >Boleto aereo</ion-select-option>
-                    <ion-select-option value="1" >Boleto Bus</ion-select-option>
-                    <ion-select-option value="2" >Boleto tren</ion-select-option>
-                    <ion-select-option value="3" >Hospedaje</ion-select-option>
-                    <ion-select-option value="4" >Gastos Varios</ion-select-option>
-                  </ion-select> 
+                <ion-item>
+                  <ion-label position="floating">Tipo de Gasto</ion-label>
+                  <ion-select #selectTipo [(ngModel)]="punto.tipo" mode="ios">
+                      <ion-select-option value="0" selected >Boleto aereo</ion-select-option>
+                      <ion-select-option value="1" >Boleto Bus</ion-select-option>
+                      <ion-select-option value="2" >Boleto tren</ion-select-option>
+                      <ion-select-option value="3" >Hospedaje</ion-select-option>
+                      <ion-select-option value="4" >Gastos Varios</ion-select-option>
+                    </ion-select> 
+                </ion-item>
             </ion-col>
           </ion-row>
         </ion-card>

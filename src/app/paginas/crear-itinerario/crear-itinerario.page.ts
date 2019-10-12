@@ -23,6 +23,11 @@ export class CrearItinerarioPage implements OnInit {
       component: ModalItinerarioPage,
       componentProps: {}
     });
+    modal.onDidDismiss()
+    .then((data) => {
+      console.log(data);
+      
+    });
     await modal.present();
   }
 

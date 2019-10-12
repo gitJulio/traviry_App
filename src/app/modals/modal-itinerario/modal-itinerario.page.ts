@@ -18,36 +18,39 @@ export class ModalItinerarioPage implements OnInit {
   contadorDescripcion:any=0;
   contadorGasto:any=0;
   contadorTipo:any=0;
-  puntos: any =[
-    {
-      descripcion:'',
-      gasto:'',
-      tipo:''
-    }
-  ]
+  itinerario:any={
+    nombre:'',
+    puntos:[
+      {
+        descripcion:'',
+        gasto:'',
+        tipo:''
+      }
+    ]
+  }
   ngOnInit() {
 
   }
 
   cerrar() {
-    this.modalController.dismiss();
+    this.modalController.dismiss(this.itinerario);
   }
 
   agregarPunto(){
 
-    this.puntos.push({
+    this.itinerario.puntos.push({
       descripcion: '',
       gasto:'',
       tipo:''
     })
     
-    console.log(this.puntos);
+    console.log(this.itinerario.puntos);
     
   }
 
   saluda(){
     // console.log(index,valor,valor2,valor3);   
-    console.log(this.puntos);
+    // console.log(this.itinerario.puntos);
     
   }
 
