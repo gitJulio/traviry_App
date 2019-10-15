@@ -28,9 +28,9 @@
  
         <div class="card-body">
 
-            <h2 class="name">Julio Ezequiel</h2>
-            <h4 class="job-title">Ing Sistemas</h4>
-            <div class="bio">Soy nuevo en esto de los viajes, pero desde muy niño a sido uno de mis más preciados sueños.</div>
+            <h2 class="name">{{dataUsuario.nombre}} {{dataUsuario.apellido}}</h2>
+            <h4 class="job-title">{{dataUsuario.profesion}}</h4>
+            <div class="bio">{{dataUsuario.conoceme}}</div>
             <!-- <div class="social-accounts">
                 <a href="#"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/dribbble.svg" alt=""><span class="sr-only">Dribbble</span></a>
                 <a href="#"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/twitter.svg" alt=""><span class="sr-only">Twitter</span></a>
@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="card-contenido">
-        <app-timeline-itinerario></app-timeline-itinerario>
+        <app-timeline-itinerario [dataPunto]="1"></app-timeline-itinerario>
     </div>
 
 </ion-content>

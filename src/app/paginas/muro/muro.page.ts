@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-muro',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuroPage implements OnInit {
 
-  constructor() { }
+  constructor(public storage:Storage) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    console.log(await this.storage.get("id_usuario"));
+    
   }
 
 }

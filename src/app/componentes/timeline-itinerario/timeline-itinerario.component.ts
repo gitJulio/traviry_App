@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-timeline-itinerario',
@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineItinerarioComponent implements OnInit {
 
+  @Input ('dataPunto') dataPunto;
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.dataPunto);
+    
+  }
 
 }
