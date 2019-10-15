@@ -10,14 +10,19 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './componentes/components.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [AppComponent,ModalItinerarioPage],
   entryComponents: [ModalItinerarioPage],
   imports: [
     BrowserModule, 
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(), 
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,

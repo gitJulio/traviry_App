@@ -1,5 +1,5 @@
 
-
+import {LoginService} from '../../servicios/login/login.service' 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, MenuController, ToastController, AlertController, LoadingController } from '@ionic/angular';
@@ -11,14 +11,16 @@ import { NavController, MenuController, ToastController, AlertController, Loadin
 })
 export class LoginPage implements OnInit {
   public onLoginForm: FormGroup;
-
+  correo:any;
+  password:any;
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder, 
+    public login:LoginService
   ) { }
 
   ionViewWillEnter() {
