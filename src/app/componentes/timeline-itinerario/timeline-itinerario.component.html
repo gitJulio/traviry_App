@@ -1,15 +1,15 @@
 <div class="muck-up">
     <div class="bottom">
       <div class="title">
-        <h3>Mi itinerario</h3>
-        <small>February 8,2015</small>
+        <h3>{{dataPunto.nombre_itinerario}}</h3>
+        <small>{{dataPunto.fecha_inicio}}</small>
       </div>
       <ul class="tasks">
           <li class="two red hang">
               <ion-card>
                   <ion-card-content>
                           <span class="task-title">Compañeros de Viaje</span>
-                          <!-- <span class="task-time">2pm</span> -->
+                          <span class="task-time">2pm</span>
                           <span class="task-cat">3 Compañeros</span>
                           <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/2.jpg">
                           <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/3.jpg">
@@ -27,12 +27,12 @@
                 </ion-card-content>
               </ion-card>
         </li>
-        <li class="three yellow">
+        <li class="three yellow" *ngFor="let punto of dataPunto.puntos_itinerario">
                 <ion-card>
                         <ion-card-content>
-                                <span class="task-title">Lunch with Mary</span>
+                                <span class="task-title">{{punto.tarea_a_realizar}}</span>
                                 <span class="task-time">2pm</span>
-                                <span class="task-cat">Grill House</span>
+                                <span class="task-cat">{{punto.lugar}}</span>
                         </ion-card-content>
                     </ion-card>
        </li>

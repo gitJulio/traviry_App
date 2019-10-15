@@ -11,7 +11,9 @@ export class TimelineItinerarioComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.dataPunto);
+    setTimeout(()=>{
+      console.log(this.dataPunto);
+    },1000)
     
   }
 
