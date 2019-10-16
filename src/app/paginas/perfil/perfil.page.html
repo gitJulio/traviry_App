@@ -40,9 +40,9 @@
 
         <div class="card-footer">
             <div class="stats">
-                <div class="stat">
+                <div class="stat" (click)="abrirListaItinerario()">
                     <span class="label">Itinerarios</span>
-                    <span class="value">7</span>
+                    <span class="value"><a>{{dataUsuario.cant_itinerarios}}</a></span>
                 </div>
                 <div class="stat">
                     <span class="label">Seguidores</span>

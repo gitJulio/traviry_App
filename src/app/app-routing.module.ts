@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'perfil', loadChildren: './paginas/perfil/perfil.module#PerfilPageModule' },
   { path: 'crear-itinerario', loadChildren: './paginas/crear-itinerario/crear-itinerario.module#CrearItinerarioPageModule' },
   { path: 'chat', loadChildren: './paginas/chat/chat.module#ChatPageModule' },
+  // { path: 'lista-itinerarios', loadChildren: './modals/lista-itinerarios/lista-itinerarios.module#ListaItinerariosPageModule' },
+
   // { path: 'modal-itinerario', loadChildren: './modals/modal-itinerario/modal-itinerario.module#ModalItinerarioPageModule' },
 
 

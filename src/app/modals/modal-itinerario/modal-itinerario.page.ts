@@ -24,7 +24,8 @@ export class ModalItinerarioPage implements OnInit {
       {
         descripcion:'',
         gasto:'',
-        tipo:''
+        tipo:'',
+        lugar:''
       }
     ]
   }

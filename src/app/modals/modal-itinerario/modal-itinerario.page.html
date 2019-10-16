@@ -13,6 +13,11 @@
       <ion-label position="floating" class="">Nombre Itinerario:</ion-label>
       <ion-input [(ngModel)]="nombre"></ion-input>
   </ion-item>
+  <ion-item>
+      <ion-label position="floating" class="">Fecha a realizar:</ion-label>
+      <ion-datetime  type="date" displayFormat="YYYY-MM-DD"  name="fundacion" required>
+        </ion-datetime >
+  </ion-item>
    
   
      <!-- <ion-col size="12" class=""> -->
@@ -65,6 +70,18 @@
                 <ion-item>
                   <ion-label position="floating">Tipo de Gasto</ion-label>
                   <ion-select #selectTipo [(ngModel)]="punto.tipo" mode="ios">
+                      <ion-select-option value="0" selected >Boleto aereo</ion-select-option>
+                      <ion-select-option value="1" >Boleto Bus</ion-select-option>
+                      <ion-select-option value="2" >Boleto tren</ion-select-option>
+                      <ion-select-option value="3" >Hospedaje</ion-select-option>
+                      <ion-select-option value="4" >Gastos Varios</ion-select-option>
+                    </ion-select> 
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-item>
+                  <ion-label position="floating">Lugar</ion-label>
+                  <ion-select #selectTipo [(ngModel)]="punto.lugar" mode="ios">
                       <ion-select-option value="0" selected >Boleto aereo</ion-select-option>
                       <ion-select-option value="1" >Boleto Bus</ion-select-option>
                       <ion-select-option value="2" >Boleto tren</ion-select-option>
