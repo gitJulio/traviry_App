@@ -1,9 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>mapa-direccion</ion-title>
+  
+    <ion-toolbar>
+      <ion-title>Sitios</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon slot="icon-only" name="close" (click)="cerrar()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+
+  <ion-toolbar color="primary">
+    <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Busca un lugar"></ion-searchbar>
+    <ion-list [hidden]="autocompleteItems.length == 0">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div id='map'></div>
 </ion-content>

@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'perfil', loadChildren: './paginas/perfil/perfil.module#PerfilPageModule' },
   { path: 'crear-itinerario', loadChildren: './paginas/crear-itinerario/crear-itinerario.module#CrearItinerarioPageModule' },
   { path: 'chat', loadChildren: './paginas/chat/chat.module#ChatPageModule' },
-  { path: 'mapa-direccion', loadChildren: './modals/mapa-direccion/mapa-direccion.module#MapaDireccionPageModule' },
+  // { path: 'mapa-direccion', loadChildren: './modals/mapa-direccion/mapa-direccion.module#MapaDireccionPageModule' },
 
   // { path: 'lista-itinerarios', loadChildren: './modals/lista-itinerarios/lista-itinerarios.module#ListaItinerariosPageModule' },
 

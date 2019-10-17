@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-// import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Component, OnInit,ViewChild, ElementRef,NgZone  } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NavController, ModalController } from '@ionic/angular';
+
+declare var google;
 
 @Component({
   selector: 'app-mapa-direccion',
@@ -8,11 +11,110 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaDireccionPage implements OnInit {
 
+
+  @ViewChild('map', { static: true }) mapElement: ElementRef;
+  map: any;
+  GoogleAutocomplete = new google.maps.places.AutocompleteService();
+  autocomplete = { input: '' };
+  autocompleteItems = [];
+  geocoder = new google.maps.Geocoder;
+  markers = [];
+
   constructor(
-                // public geolocation:Geolocation
+                public geolocation:Geolocation,
+                public nav:NavController,
+                public zone:NgZone,
+                public modalController:ModalController
   ) { }
 
   ngOnInit() {
+  }
+  // ionViewDidLoad(){
+  //   this.loadMap();
+  // }
+  ionViewDidEnter(){
+    //Set latitude and longitude of some place
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -34.9011, lng: -56.1645 },
+      zoom: 15
+    });
+  }
+  loadMap(){
+
+    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+  }
+
+
+  updateSearchResults(){
+
+    if (this.autocomplete.input == '') {
+      this.autocompleteItems = [];
+      return;
+    }
+    this.GoogleAutocomplete.getPlacePredictions({ input: this.autocomplete.input },(predictions, status) => { 
+      this.autocompleteItems = [];
+      this.zone.run(() => {
+        predictions.forEach((prediction) => {
+          this.autocompleteItems.push(prediction);          
+        });
+      });
+    });
+  }
+
+  selectSearchResult(item){
+    // this.clearMarkers();
+    this.autocompleteItems = [];
+    
+    
+    this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
+      if(status === 'OK' && results[0]){
+        console.log( results);
+        
+        let position = {
+            lat: results[0].geometry.location.lat,
+            lng: results[0].geometry.location.lng
+        };
+        
+        let marker = new google.maps.Marker({
+          position: results[0].geometry.location,
+          map: this.map,
+        });
+        this.markers.push(marker);
+        this.map.setCenter(results[0].geometry.location);
+      }
+    })
+  }
+
+  tryGeolocation(){
+    // this.clearMarkers();
+    this.geolocation.getCurrentPosition().then((resp) => {
+      let pos = {
+        lat: resp.coords.latitude,
+        lng: resp.coords.longitude
+      };
+      let marker = new google.maps.Marker({
+        position: pos,
+        map: this.map,
+        title: 'I am here!'
+      });
+      this.markers.push(marker);
+      this.map.setCenter(pos);
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+  }
+
+  cerrar() {
+    this.modalController.dismiss();
   }
 
 }

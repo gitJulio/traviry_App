@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalItinerarioPage } from '../../modals/modal-itinerario/modal-itinerario.page';
 
+
 @Component({
   selector: 'app-crear-itinerario',
   templateUrl: './crear-itinerario.page.html',
@@ -30,5 +31,7 @@ export class CrearItinerarioPage implements OnInit {
     });
     await modal.present();
   }
+
+
 
 }

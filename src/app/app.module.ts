@@ -19,9 +19,11 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+import {MapaDireccionPage} from './modals/mapa-direccion/mapa-direccion.page'
+
 @NgModule({
-  declarations: [AppComponent,ModalItinerarioPage,ListaItinerariosPage],
-  entryComponents: [ModalItinerarioPage,ListaItinerariosPage],
+  declarations: [AppComponent,ModalItinerarioPage,ListaItinerariosPage,MapaDireccionPage],
+  entryComponents: [ModalItinerarioPage,ListaItinerariosPage,MapaDireccionPage],
   imports: [
     BrowserModule, 
     IonicStorageModule.forRoot(),
