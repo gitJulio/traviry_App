@@ -1,6 +1,7 @@
 import { Component, OnInit,ViewChild, ElementRef,NgZone  } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NavController, ModalController } from '@ionic/angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 declare var google;
 
@@ -28,6 +29,7 @@ export class MapaDireccionPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.iniciarLocalizacion()
   }
   // ionViewDidLoad(){
   //   this.loadMap();
@@ -71,7 +73,10 @@ export class MapaDireccionPage implements OnInit {
   }
 
   selectSearchResult(item){
-    // this.clearMarkers();
+    
+    this.clearMarkers();
+    
+    
     this.autocompleteItems = [];
     
     
@@ -88,19 +93,22 @@ export class MapaDireccionPage implements OnInit {
           position: results[0].geometry.location,
           map: this.map,
         });
-        this.markers.push(marker);
+        this.markers.push(marker);        
         this.map.setCenter(results[0].geometry.location);
       }
     })
+    this.tryGeolocation()
   }
 
   tryGeolocation(){
-    // this.clearMarkers();
+    this.clearMarkers();
     this.geolocation.getCurrentPosition().then((resp) => {
+      
       let pos = {
         lat: resp.coords.latitude,
         lng: resp.coords.longitude
       };
+     
       let marker = new google.maps.Marker({
         position: pos,
         map: this.map,
@@ -113,8 +121,32 @@ export class MapaDireccionPage implements OnInit {
     });
   }
 
+  async iniciarLocalizacion(){
+    await this.geolocation.getCurrentPosition().then((resp) => {
+      
+      let pos = {
+        lat: resp.coords.latitude,
+        lng: resp.coords.longitude
+      };
+     
+    let watch = this.geolocation.watchPosition();
+    watch.subscribe((data)=>{
+      console.log(data.coords);
+      
+    })
+
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+  }
+
   cerrar() {
     this.modalController.dismiss();
+  }
+  clearMarkers(){
+    this.markers=[];
+    console.log(this.markers );
+    
   }
 
 }
