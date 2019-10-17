@@ -20,6 +20,8 @@ export class MapaDireccionPage implements OnInit {
   autocompleteItems = [];
   geocoder = new google.maps.Geocoder;
   markers = [];
+  lat:any;
+  long:any;
 
   constructor(
                 public geolocation:Geolocation,
