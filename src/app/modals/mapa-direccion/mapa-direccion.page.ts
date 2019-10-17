@@ -75,10 +75,8 @@ export class MapaDireccionPage implements OnInit {
   selectSearchResult(item){
     
     this.clearMarkers();
-    
-    
+
     this.autocompleteItems = [];
-    
     
     this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
       if(status === 'OK' && results[0]){
@@ -122,17 +120,15 @@ export class MapaDireccionPage implements OnInit {
   }
 
   async iniciarLocalizacion(){
+
     await this.geolocation.getCurrentPosition().then((resp) => {
-      
       let pos = {
         lat: resp.coords.latitude,
         lng: resp.coords.longitude
       };
-     
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data)=>{
       console.log(data.coords);
-      
     })
 
     }).catch((error) => {
