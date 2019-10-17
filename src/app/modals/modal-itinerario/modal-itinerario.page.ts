@@ -46,13 +46,11 @@ export class ModalItinerarioPage implements OnInit {
       tipo:''
     })
     
-    console.log(this.itinerario.puntos);
     
   }
 
   async mapa() {
-    console.log("aaaaaaa");
-    
+   
     // await modal = await this.modalController.create({
     //   component: ModalItinerarioPage
     // });
