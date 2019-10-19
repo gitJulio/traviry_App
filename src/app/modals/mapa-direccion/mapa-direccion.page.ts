@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild, ElementRef,NgZone  } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef,NgZone, ɵConsole  } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NavController, ModalController } from '@ionic/angular';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
@@ -74,15 +74,16 @@ export class MapaDireccionPage implements OnInit {
     });
   }
 
-  selectSearchResult(item){
+  async selectSearchResult(item){
     
-    this.clearMarkers();
+    // this.clearMarkers();
 
     this.autocompleteItems = [];
+   
     
-    this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
+     this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
+
       if(status === 'OK' && results[0]){
-        console.log( results);
         
         let position = {
             lat: results[0].geometry.location.lat,
@@ -93,13 +94,23 @@ export class MapaDireccionPage implements OnInit {
           position: results[0].geometry.location,
           map: this.map,
         });
+
+        let coords=JSON.stringify(marker.position); 
+        console.log(JSON.parse(coords));
+        
+
+        
         this.markers.push(marker);        
         this.map.setCenter(results[0].geometry.location);
       }
     })
-    this.tryGeolocation()
+    // this.tryGeolocation()
   }
 
+  async locate( position){
+    console.log(await position);
+    
+  }
   tryGeolocation(){
     this.clearMarkers();
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -130,7 +141,6 @@ export class MapaDireccionPage implements OnInit {
       };
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data)=>{
-      console.log(data.coords);
     })
 
     }).catch((error) => {
@@ -143,7 +153,6 @@ export class MapaDireccionPage implements OnInit {
   }
   clearMarkers(){
     this.markers=[];
-    console.log(this.markers );
     
   }
 
