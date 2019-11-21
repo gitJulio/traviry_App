@@ -5,6 +5,7 @@ export const Header = {
     'Access-Control-Allow-Origin': '*'
   }
   
-  export const WEB_SERVICE = "http://localhost:7500/"
+  // export const WEB_SERVICE = "http://localhost:7500/"
+  export const WEB_SERVICE = "https://traviry.herokuapp.com/"
 
   
