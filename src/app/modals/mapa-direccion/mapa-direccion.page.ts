@@ -90,7 +90,9 @@ export class MapaDireccionPage implements OnInit {
             lat: results[0].geometry.location.lat,
             lng: results[0].geometry.location.lng
         };
-        console.log(results[0]);
+        // console.log("***************");
+        // console.log(results[0].geometry.location);
+        // console.log("***************");
         
         let marker = new google.maps.Marker({
           position: results[0].geometry.location,
@@ -98,7 +100,8 @@ export class MapaDireccionPage implements OnInit {
         });
 
         let coords=JSON.stringify(marker.position); 
-    
+        console.log(coords);
+        
         
 
         
