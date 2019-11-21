@@ -29,8 +29,8 @@
         <div class="card-body">
 
             <h2 class="name">{{dataUsuario.nombre}} {{dataUsuario.apellido}}</h2>
-            <h4 class="job-title">{{dataUsuario.profesion}}</h4>
-            <div class="bio">{{dataUsuario.conoceme}}</div>
+            <h4 class="job-title">{{dataUsuario.detalle_usuario.profesion}}</h4>
+            <div class="bio">{{dataUsuario.detalle_usuario.sobre_mi}}</div>
             <!-- <div class="social-accounts">
                 <a href="#"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/dribbble.svg" alt=""><span class="sr-only">Dribbble</span></a>
                 <a href="#"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/twitter.svg" alt=""><span class="sr-only">Twitter</span></a>
@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="card-contenido">
-        <app-timeline-itinerario [dataPunto]="dataUsuario.itinerario"></app-timeline-itinerario>
+        <app-timeline-itinerario [dataPunto]="dataUsuario.itinerarios"></app-timeline-itinerario>
     </div>
 
 </ion-content>

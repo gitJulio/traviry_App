@@ -15,7 +15,7 @@ export class DetalleUsuarioService {
     let body = {
       id_usuario:await this.storage.get('id_usuario')
     };
-    console.log();
+   
     
     const url = `${WEB_SERVICE}api/getDataUsuario`;
     var resp = await this.http.post(url, body, { headers }).toPromise();

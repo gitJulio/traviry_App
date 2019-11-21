@@ -17,6 +17,13 @@ export class PerfilPage implements OnInit {
     profesion:'',
     conoceme:'',
     cant_itinerarios:'',
+    detalle_usuario: {
+      id_detalle_usuario: '',
+      id_usuario:'',
+      profesion:'',
+      id_pais: '',
+      sobre_mi:''
+    },
     itinerario:{
       id_itinerario:'',
       nombre_itinerario:'',
@@ -43,6 +50,10 @@ export class PerfilPage implements OnInit {
 
   async ngOnInit() {
     this.dataUsuario=await this.detUs.getDetalleUsuario();
+    console.log("************");
+    console.log(this.dataUsuario.itinerarios);
+    console.log("************");
+    
   }
 
   
