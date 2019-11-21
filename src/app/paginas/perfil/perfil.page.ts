@@ -50,10 +50,6 @@ export class PerfilPage implements OnInit {
 
   async ngOnInit() {
     this.dataUsuario=await this.detUs.getDetalleUsuario();
-    console.log("************");
-    console.log(this.dataUsuario.itinerarios);
-    console.log("************");
-    
   }
 
   

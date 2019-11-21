@@ -8,12 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TimelineItinerarioComponent implements OnInit {
 
   @Input ('dataPunto') dataPunto;
+  puntos_itinerario:any={
+    nombre_itinerario:''
+  };
   constructor() { }
 
   ngOnInit() {
     setTimeout(()=>{
       console.log(this.dataPunto);
-    },1000)
+    },500)
     
   }
 
