@@ -36,6 +36,7 @@ export class ModalItinerarioPage implements OnInit {
     puntos:[
       {
         descripcion:'',
+        fecha_punto:'',
         gasto:'',
         tipo:'',
         direccion:{
