@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalItinerarioPage } from '../../modals/modal-itinerario/modal-itinerario.page';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -16,7 +17,10 @@ export class CrearItinerarioPage implements OnInit {
       lugar:''
     }
   }
-  constructor(public modalController: ModalController) { }
+  constructor(
+              public modalController: ModalController,
+               private storage: Storage
+            ) { }
 
   ngOnInit() {
   }
@@ -32,7 +36,7 @@ export class CrearItinerarioPage implements OnInit {
     });
     modal.onDidDismiss()
     .then((data) => {
-      console.log(data);
+      console.log(JSON.stringify(data.data));
 
     });
     await modal.present();

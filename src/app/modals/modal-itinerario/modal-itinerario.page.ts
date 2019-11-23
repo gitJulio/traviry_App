@@ -2,6 +2,7 @@ import { Component, OnInit,Input,ViewChild } from '@angular/core';
 import { NavParams, ModalController } from '@ionic/angular';
 import { MapaDireccionPage } from '../../modals/mapa-direccion/mapa-direccion.page'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-modal-itinerario',
@@ -12,10 +13,11 @@ export class ModalItinerarioPage implements OnInit {
 
   constructor(
             public geolocation:Geolocation,
-            public modalController:ModalController
+            public modalController:ModalController,
+             private storage: Storage
   ) { }
 
-   a:any='';
+
 
   public anArray:any=[];
 
@@ -28,13 +30,14 @@ export class ModalItinerarioPage implements OnInit {
     lng:''
   }
   itinerario:any={
-    nombre:'Julio',
-    fecha:'01/01/2019',
+    id_usuario:'',
+    nombre:'',
+    fecha:'',
     puntos:[
       {
-        descripcion:'Compra Boleto',
-        gasto:'45',
-        tipo:"0",
+        descripcion:'',
+        gasto:'',
+        tipo:'',
         direccion:{
           lugar:'',
           coords:{
@@ -47,6 +50,7 @@ export class ModalItinerarioPage implements OnInit {
   }
   async ngOnInit() {
     // this.coords=await this.iniciarLocalizacion()
+    this.itinerario.id_usuario=await this.storage.get('id_usuario');
   }
   async ionViewWillEnter() {
     await this.iniciarLocalizacion()
@@ -105,8 +109,6 @@ export class ModalItinerarioPage implements OnInit {
   async guardar(){
     // console.log(index,valor,valor2,valor3);
     // console.log(this.itinerario.puntos);
-    console.log(this.itinerario)
-    console.log(this.coords)
     this.modalController.dismiss(this.itinerario);
   }
 
