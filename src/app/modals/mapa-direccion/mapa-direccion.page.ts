@@ -1,6 +1,6 @@
-import { Component, OnInit,ViewChild, ElementRef,NgZone, ɵConsole  } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef,NgZone, ɵConsole,Input  } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, NavParams } from '@ionic/angular';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 declare var google;
@@ -13,6 +13,7 @@ declare var google;
 export class MapaDireccionPage implements OnInit {
 
 
+  @Input("value") value;
   @ViewChild('map', { static: true }) mapElement: ElementRef;
   map: any;
   GoogleAutocomplete = new google.maps.places.AutocompleteService();
@@ -20,18 +21,35 @@ export class MapaDireccionPage implements OnInit {
   autocompleteItems = [];
   geocoder = new google.maps.Geocoder;
   markers = [];
-  lat:any;
-  long:any;
-
+  lat:number;
+  lng:number;
+  lugar:any={
+        coords:'',
+        lugar:''
+  };
   constructor(
                 public geolocation:Geolocation,
                 public nav:NavController,
                 public zone:NgZone,
-                public modalController:ModalController
+                public modalController:ModalController,
+                private navParams: NavParams
   ) { }
 
-  ngOnInit() {
-    this.iniciarLocalizacion()
+  async ionViewWillEnter() {
+    let myValue = this.navParams.get('value');
+    let coords =this.navParams.get('value2');
+    if (myValue.coords.lat==="") {
+      this.lat=coords.lat
+      this.lng=coords.lng
+    }else{
+      this.lat=myValue.coords.lat
+      this.lng=myValue.coords.lng
+    }
+  }
+
+  async ngOnInit() {
+    // this.iniciarLocalizacion()
+
   }
   // ionViewDidLoad(){
   //   this.loadMap();
@@ -39,13 +57,13 @@ export class MapaDireccionPage implements OnInit {
   ionViewDidEnter(){
     //Set latitude and longitude of some place
     this.map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: -34.9011, lng: -56.1645 },
+      center: { lat:this.lat, lng:this.lng },
       zoom: 15
     });
   }
   loadMap(){
 
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+    let latLng = new google.maps.LatLng(this.lat, this.lng);
 
     let mapOptions = {
       center: latLng,
@@ -64,28 +82,28 @@ export class MapaDireccionPage implements OnInit {
       this.autocompleteItems = [];
       return;
     }
-    this.GoogleAutocomplete.getPlacePredictions({ input: this.autocomplete.input },(predictions, status) => { 
+    this.GoogleAutocomplete.getPlacePredictions({ input: this.autocomplete.input },(predictions, status) => {
       this.autocompleteItems = [];
       this.zone.run(() => {
         predictions.forEach((prediction) => {
-          this.autocompleteItems.push(prediction);          
+          this.autocompleteItems.push(prediction);
         });
       });
     });
   }
 
   async selectSearchResult(item){
-    
+
     // this.clearMarkers();
 
     this.autocompleteItems = [];
-   
-    
+
+
      this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
 
-      
+
       if(status === 'OK' && results[0]){
-        
+
         let position = {
             lat: results[0].geometry.location.lat,
             lng: results[0].geometry.location.lng
@@ -93,19 +111,21 @@ export class MapaDireccionPage implements OnInit {
         // console.log("***************");
         // console.log(results[0].geometry.location);
         // console.log("***************");
-        
+
         let marker = new google.maps.Marker({
           position: results[0].geometry.location,
           map: this.map,
         });
 
-        let coords=JSON.stringify(marker.position); 
-        console.log(coords);
-        
-        
+        console.log(results[0].formatted_address)
+        this.lugar.lugar=results[0].formatted_address
+        this.lugar.coords=JSON.stringify(marker.position);
 
-        
-        this.markers.push(marker);        
+
+
+
+
+        this.markers.push(marker);
         this.map.setCenter(results[0].geometry.location);
       }
     })
@@ -114,17 +134,17 @@ export class MapaDireccionPage implements OnInit {
 
   async locate( position){
     console.log(await position);
-    
+
   }
   tryGeolocation(){
     this.clearMarkers();
     this.geolocation.getCurrentPosition().then((resp) => {
-      
+
       let pos = {
         lat: resp.coords.latitude,
         lng: resp.coords.longitude
       };
-     
+
       let marker = new google.maps.Marker({
         position: pos,
         map: this.map,
@@ -139,11 +159,13 @@ export class MapaDireccionPage implements OnInit {
 
   async iniciarLocalizacion(){
 
+    let coords;
     await this.geolocation.getCurrentPosition().then((resp) => {
       let pos = {
         lat: resp.coords.latitude,
         lng: resp.coords.longitude
       };
+      coords=pos
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data)=>{
     })
@@ -151,6 +173,8 @@ export class MapaDireccionPage implements OnInit {
     }).catch((error) => {
       console.log('Error getting location', error);
     });
+
+    return coords;
   }
 
   cerrar() {
@@ -158,7 +182,11 @@ export class MapaDireccionPage implements OnInit {
   }
   clearMarkers(){
     this.markers=[];
-    
+
+  }
+
+  guardarDireccion(){
+    this.modalController.dismiss(this.lugar)
   }
 
 }

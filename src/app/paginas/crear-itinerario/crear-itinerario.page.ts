@@ -10,6 +10,12 @@ import { ModalItinerarioPage } from '../../modals/modal-itinerario/modal-itinera
 })
 export class CrearItinerarioPage implements OnInit {
 
+  itinerario:any={
+    direccion:{
+      coords:'',
+      lugar:''
+    }
+  }
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
@@ -22,12 +28,12 @@ export class CrearItinerarioPage implements OnInit {
     // return await modal.present();
     const modal = await this.modalController.create({
       component: ModalItinerarioPage,
-      componentProps: {}
+      componentProps: {value:this.itinerario.direccion}
     });
     modal.onDidDismiss()
     .then((data) => {
       console.log(data);
-      
+
     });
     await modal.present();
   }
