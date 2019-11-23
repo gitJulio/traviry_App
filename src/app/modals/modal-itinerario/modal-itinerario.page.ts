@@ -62,7 +62,13 @@ export class ModalItinerarioPage implements OnInit {
       descripcion: '',
       gasto:'',
       tipo:'',
-      lugar:''
+      direccion:{
+        lugar:'',
+        coords:{
+          lat:'',
+          lng:''
+        }
+      }
     })
 
 
@@ -101,7 +107,7 @@ export class ModalItinerarioPage implements OnInit {
     // console.log(this.itinerario.puntos);
     console.log(this.itinerario)
     console.log(this.coords)
-
+    this.modalController.dismiss(this.itinerario);
   }
 
   async iniciarLocalizacion(){

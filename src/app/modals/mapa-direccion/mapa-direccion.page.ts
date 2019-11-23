@@ -39,9 +39,11 @@ export class MapaDireccionPage implements OnInit {
     let myValue = this.navParams.get('value');
     let coords =this.navParams.get('value2');
     if (myValue.coords.lat==="") {
+      console.log("aaaaaaaa")
       this.lat=coords.lat
       this.lng=coords.lng
     }else{
+      console.log("eeeee")
       this.lat=myValue.coords.lat
       this.lng=myValue.coords.lng
     }
