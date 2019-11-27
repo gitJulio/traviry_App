@@ -13,14 +13,14 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-                    <ion-col size="6" *ngFor="let item of [1,2,3]"  >
+                    <ion-col size="6" *ngFor="let iti of lista_itinerario" (click)="ir_itinerario()" >
                             <ion-card   class="ion-text-center">
                                     <ion-card-header >
                                       <!-- <ion-card-subtitle>  <ion-icon name="md-add-circle"></ion-icon></ion-card-subtitle> -->
                                         <ion-img src="assets/icon/planning.png"></ion-img>
                                     </ion-card-header>
                                     <ion-card-content>
-                                            <b>Mi Itinerario</b>
+                                            <b>{{iti.nombre_itinerario}}</b>
                                     </ion-card-content>
                             </ion-card>
                     </ion-col>
