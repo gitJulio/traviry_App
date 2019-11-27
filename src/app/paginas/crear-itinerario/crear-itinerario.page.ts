@@ -4,6 +4,8 @@ import { ModalItinerarioPage } from '../../modals/modal-itinerario/modal-itinera
 import { Storage } from '@ionic/storage';
 import { ItinerariosService } from 'src/app/servicios/itinerarios/itinerarios.service';
 import { Router } from '@angular/router';
+import { ListaItinerariosPage } from 'src/app/modals/lista-itinerarios/lista-itinerarios.page';
+import { ViewItinerarioPage } from 'src/app/modals/view-itinerario/view-itinerario.page';
 
 
 @Component({
@@ -20,6 +22,7 @@ export class CrearItinerarioPage implements OnInit {
     }
   }
   lista_itinerario:any;
+  itinerario_a_modal:any;
   constructor(
               public modalController: ModalController,
               private storage: Storage,
@@ -32,6 +35,17 @@ export class CrearItinerarioPage implements OnInit {
 
   ionViewWillEnter (){
     this.getItinerario();
+  }
+
+  
+  async getItinerario(){
+    this.lista_itinerario=await this._itinerario.getItinerarios();
+    this.itinerario_a_modal=await this._itinerario.getItinerarios();
+    this.lista_itinerario.forEach(item=>{
+      if(item.nombre_itinerario.length>16){
+        item.nombre_itinerario=item.nombre_itinerario.substr(0,15)+'..'        
+      }
+    })
   }
 
   async presentModal() {
@@ -51,14 +65,20 @@ export class CrearItinerarioPage implements OnInit {
     await modal.present();
   }
 
-  async getItinerario(){
-    this.lista_itinerario=await this._itinerario.getItinerarios();
-    this.lista_itinerario.forEach(item=>{
-      if(item.nombre_itinerario.length>16){
-        item.nombre_itinerario=item.nombre_itinerario.substr(0,15)+'..'        
-      }
-    })
+  async listaItinerarioModal(i) {
+ 
+    const modal = await this.modalController.create({
+      component: ViewItinerarioPage,
+      componentProps: {value:this.itinerario_a_modal[i]}
+    });
+    modal.onDidDismiss()
+    .then((data) => {
+
+    });
+    await modal.present();
   }
+
+
 
   async ir_itinerario(){
     console.log("aaaa");

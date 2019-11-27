@@ -1,9 +1,15 @@
-<ion-header>
+
+ <ion-header>
   <ion-toolbar>
-    <ion-title>view_itinerario</ion-title>
+    <ion-title>Itinerario</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="close" (click)="cerrar()"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="card-contenido">
+    <app-timeline-itinerario [dataPunto]="puntos"></app-timeline-itinerario>
+</div>
 </ion-content>

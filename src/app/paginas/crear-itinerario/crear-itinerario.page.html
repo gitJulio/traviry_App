@@ -13,7 +13,7 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-                    <ion-col size="6" *ngFor="let iti of lista_itinerario" (click)="ir_itinerario()" >
+                    <ion-col size="6" *ngFor="let iti of lista_itinerario; let i =index;" (click)="listaItinerarioModal(i)" >
                             <ion-card   class="ion-text-center">
                                     <ion-card-header >
                                       <!-- <ion-card-subtitle>  <ion-icon name="md-add-circle"></ion-icon></ion-card-subtitle> -->

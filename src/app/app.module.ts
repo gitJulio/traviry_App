@@ -20,10 +20,11 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import {MapaDireccionPage} from './modals/mapa-direccion/mapa-direccion.page'
+import { ViewItinerarioPage } from './modals/view-itinerario/view-itinerario.page';
 
 @NgModule({
-  declarations: [AppComponent,ModalItinerarioPage,ListaItinerariosPage,MapaDireccionPage],
-  entryComponents: [ModalItinerarioPage,ListaItinerariosPage,MapaDireccionPage],
+  declarations: [AppComponent,ModalItinerarioPage,ListaItinerariosPage,MapaDireccionPage,ViewItinerarioPage],
+  entryComponents: [ModalItinerarioPage,ListaItinerariosPage,MapaDireccionPage,ViewItinerarioPage],
   imports: [
     BrowserModule, 
     IonicStorageModule.forRoot(),
