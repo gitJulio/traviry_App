@@ -60,7 +60,7 @@ export class CrearItinerarioPage implements OnInit {
     modal.onDidDismiss()
     .then((data) => {
       console.log(JSON.stringify(data.data));
-
+      this._itinerario.insertItinerarios(data.data)
     });
     await modal.present();
   }

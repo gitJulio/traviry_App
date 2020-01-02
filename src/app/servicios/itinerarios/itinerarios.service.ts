@@ -19,4 +19,12 @@ export class ItinerariosService {
     var resp = await this.http.post(url, body, { headers }).toPromise();
     return resp;
   }
+
+  async insertItinerarios(p_data_itinerario:any) {
+    const headers = new HttpHeaders(Header);
+    let body = [p_data_itinerario]
+    const url = `${WEB_SERVICE}api/insertItinerarios`;
+    var resp = await this.http.post(url, body, { headers }).toPromise();
+    return resp;
+  }
 }
