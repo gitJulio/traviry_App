@@ -24,16 +24,17 @@
  -->
 
 <ion-content>
-  <ion-row>
+  <ion-row class="borde">
           <ion-col size="6" *ngFor="let itinerario of listaItinerarios">
                   <ion-card  class="ion-text-center" (click)="presentModal()">
-                          <ion-card-header>
+                          <ion-card-header >
                             <ion-card-subtitle> 
-                                <img class="avatar" src="https://www.expoknews.com/wp-content/uploads/2019/03/Machu-Pichu-1024x500.jpg">
+                                <!-- <img class="avatar" src="https://www.expoknews.com/wp-content/uploads/2019/03/Machu-Pichu-1024x500.jpg"> -->
+                                ll
                             </ion-card-subtitle>
                           </ion-card-header>
                           <ion-card-content>
-                                  <b>{{itinerario.descripcion}}</b>
+                                  <b>{{itinerario | json}}</b> -------
                           </ion-card-content>
                   </ion-card>
           </ion-col>

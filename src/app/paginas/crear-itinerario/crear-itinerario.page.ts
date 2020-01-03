@@ -40,6 +40,8 @@ export class CrearItinerarioPage implements OnInit {
   
   async getItinerario(){
     this.lista_itinerario=await this._itinerario.getItinerarios();
+    console.log(this.lista_itinerario);
+    
     this.itinerario_a_modal=await this._itinerario.getItinerarios();
     this.lista_itinerario.forEach(item=>{
       if(item.nombre_itinerario.length>16){
