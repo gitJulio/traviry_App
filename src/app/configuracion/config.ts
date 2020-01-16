@@ -6,7 +6,7 @@ export const Header = {
   }
   
   // export const WEB_SERVICE = "http://89.40.13.159:7500/"
-  export const WEB_SERVICE = "http://localhost:7500/"
-  // export const WEB_SERVICE = "https://traviry.herokuapp.com/"
+  // export const WEB_SERVICE = "http://localhost:7500/"
+  export const WEB_SERVICE = "https://traviry.herokuapp.com/"
 
   
